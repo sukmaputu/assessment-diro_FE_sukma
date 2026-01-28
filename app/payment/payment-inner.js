@@ -24,11 +24,6 @@ export default function PaymentInner() {
           Booking ID: <b>{bookingId}</b>
         </p>
 
-        <div className="border p-4 rounded-xl mb-6">
-          <p className="text-sm text-gray-500">Metode Pembayaran</p>
-          <p className="font-semibold mt-2">💳 Kartu Kredit (Fake)</p>
-        </div>
-
         <button
           onClick={handlePay}
           disabled={loading}
