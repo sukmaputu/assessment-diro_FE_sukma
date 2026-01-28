@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import { Suspense } from "react";
 
 const PaymentInner = dynamic(() => import("./payment-inner"), {
   ssr: false,
@@ -10,5 +11,15 @@ const PaymentInner = dynamic(() => import("./payment-inner"), {
 });
 
 export default function PaymentPage() {
-  return <PaymentInner />;
+  return (
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center">
+          Loading...
+        </div>
+      }
+    >
+      <PaymentInner />
+    </Suspense>
+  );
 }
