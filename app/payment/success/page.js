@@ -1,6 +1,8 @@
 "use client";
 import { useSearchParams } from "next/navigation";
 
+export const dynamic = "force-dynamic";
+
 export default function PaymentSuccess() {
   const params = useSearchParams();
   const bookingId = params.get("booking_id");
